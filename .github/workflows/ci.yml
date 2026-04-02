@@ -42,11 +42,11 @@ jobs:
       - name: Run tests
         run: pytest
 
-  # build:
-  #   runs-on: ubuntu-latest
-  #   needs: tests
-  #   steps:
-  #    - name: Checkout repository
-  #      uses: actions/checkout@v6
-  #    - name: Build docker image
-  #      run: docker build -t my-first-github-actions-wf
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Build docker image
+        run: docker build -t calculator-api:latest .
