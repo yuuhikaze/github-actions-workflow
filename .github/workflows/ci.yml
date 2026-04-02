@@ -8,8 +8,23 @@ on:
 # Jobs
 # with one CI pipeline multiple environment configurations can be validated
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run lint
+        run: ruff check .
+
   test:
     runs-on: ubuntu-latest
+    needs: lint
     strategy:
       matrix:
         python-version: ["3.10", "3.13"]
