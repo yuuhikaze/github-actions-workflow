@@ -55,7 +55,7 @@ jobs:
 
   docker-push:
     runs-on: ubuntu-latest
-    needs: docker-build
+    needs: build
 
     if: github.event_name == 'push'
 
