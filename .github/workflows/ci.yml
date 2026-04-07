@@ -1,5 +1,6 @@
 name: Simple CI
 
+
 # Triggers
 on:
   push:
