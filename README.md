@@ -43,3 +43,5 @@ curl -X POST https://sd-api-test.yhkze.net/multiply \
 ```
 
 > Expected response: {"result":42,"operation":"multiply"}
+
+Open swagger docs: <https://sd-api-test.yhkze.net/docs>
