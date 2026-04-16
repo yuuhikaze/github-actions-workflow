@@ -4,12 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    # Customizable: change the address:port below
-    # Examples:
-    #   - "0.0.0.0:8000" to bind on all interfaces (default)
-    #   - "127.0.0.1:8000" or "localhost:8000" for localhost only
-    #   - "8000" binds to 0.0.0.0:8000 implicitly
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     expose:
       - "8000"
     networks:
