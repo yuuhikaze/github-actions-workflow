@@ -10,6 +10,8 @@ python -m pytest # assumes you have pytest available on your system
 
 ## Usage
 
+### Production
+
 Test addition:
 
 ```bash
@@ -30,10 +32,12 @@ curl -X POST https://sd-api.yhkze.net/subtract \
 
 > Expected response: {"result":6,"operation":"subtract"}
 
+### Test
+
 Test multiplication:
 
 ```bash
-curl -X POST https://sd-api.yhkze.net/multiply \
+curl -X POST https://sd-api-test.yhkze.net/multiply \
   -H "Content-Type: application/json" \
   -d '{"a": 6, "b": 7}'
 ```
