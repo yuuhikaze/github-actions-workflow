@@ -11,7 +11,7 @@ services:
     labels:
       traefik.enable: "true"
       traefik.http.services.github-actions-workflow-api.loadbalancer.server.port: "8000"
-      traefik.http.routers.github-actions-workflow-api.rule: "Host(`sd-api.yhkze.net`)"
+      traefik.http.routers.github-actions-workflow-api.rule: "Host(`sd-api.yhkze.net`) && Host(`sd-api-test.yhkze.net`)"
       traefik.http.routers.github-actions-workflow-api.service: "github-actions-workflow-api"
       traefik.http.routers.github-actions-workflow-api.entrypoints: "websecure"
       traefik.http.routers.github-actions-workflow-api.tls: "true"
